@@ -8,9 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 // Connect DB
-var DB_CONNECTION = process.env.DB_HOST + process.env.DB_NAME;
-console.log(DB_CONNECTION);
-console.log('mongodb://localhost/csdev');
+var DB_CONNECTION = process.env.MONGODB_URI;
 mongoose.connect(DB_CONNECTION);
 var db = mongoose.connection;
 db.on('error', function () {
