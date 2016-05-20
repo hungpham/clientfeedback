@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="/display">Display Report</a></li>
+</ul>
+
+<div class="row">
+  <div class="col-xs-12">
+    <form action="" method="post">
+      <div class="form-group">
+        <label for="key">Key</label>
+        <input type="text" class="form-control" placeholder="Enter key" value="" name="key" required>
+      </div>
+      <div class="form-group hidden">
+        <label for="store">Store</label>
+        <input type="text" class="form-control" placeholder="Key" value="{{config.store}}" readonly="readonly" name="store">
+      </div>
+      <div class="form-group">
+        <label for="cashier">Cashier</label>
+        <select class="form-control" name="cashier" required>
+          <option value="">Select a Cashier</option>
+          {{#each config.cashier as |cashierName|}}
+          <option value="{{@index}}">{{cashierName}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-default">Login</button>
+    </form>
+  </div>
+</div>

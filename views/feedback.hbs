@@ -1,0 +1,19 @@
+<div class="page-header">
+<h1>
+  <span>{{headline.en}} ?</span><br />
+  <span>{{headline.th}} ?</span>
+</h1>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <form action="" method="post" name="formFeedback" id="formFeedback">
+      {{#each levels as |level|}}
+      <div class="input-group">
+
+          <input onclick="document.getElementById('formFeedback').submit();" type="radio" name="feedbackLevel" id="input-feedback-{{@index}}" value="{{@index}}">
+        <label class="emoticion" for="input-feedback-{{@index}}">{{level.th}} <br />{{level.en}}</label>
+      </div>
+      {{/each}}
+    </form>
+  </div>
+</div>
